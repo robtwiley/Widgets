@@ -17,6 +17,7 @@ class WidgetsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+	  format.js
       format.xml  { render :xml => @widget }
     end
   end
@@ -28,6 +29,7 @@ class WidgetsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+	  format.js
       format.xml  { render :xml => @widget }
     end
   end
@@ -45,9 +47,11 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       if @widget.save
         format.html { redirect_to(@widget, :notice => 'Widget was successfully created.') }
+		format.js
         format.xml  { render :xml => @widget, :status => :created, :location => @widget }
       else
         format.html { render :action => "new" }
+		format.js
         format.xml  { render :xml => @widget.errors, :status => :unprocessable_entity }
       end
     end
@@ -61,9 +65,11 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       if @widget.update_attributes(params[:widget])
         format.html { redirect_to(@widget, :notice => 'Widget was successfully updated.') }
+		format.js
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
+		format.js 
         format.xml  { render :xml => @widget.errors, :status => :unprocessable_entity }
       end
     end
@@ -77,6 +83,7 @@ class WidgetsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(widgets_url) }
+	  format.js
       format.xml  { head :ok }
     end
   end

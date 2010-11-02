@@ -3,14 +3,32 @@
 <head>
   <title>Widgets</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery-1.4.3.min', 'rails' %>
+  <%= javascript_include_tag 'jquery-1.4.3.min', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="outer-body">
 
-<div id="content">
-	<%= yield %>
-</div>
+    <div id="menu-bar">
+       <div id="menu-item">
+	     <%= link_to 'Home', root_url, { :title => 'Go to home page'} %>
+  	   </div>
+    </div>
+    <div id="content">
+	  <%= yield %>
+    </div>
+    <div id="display">
+    </div>
+
+    <div id="outer-body-bottom-center">
+       <script type="text/javascript" language="javascript">
+       <!-- Begin
+	      writeBottom("No");
+      //-->
+       </script>
+    </div> <!-- end outer-body-bottom-center -->
+   
+  <div> <!--end outer-body --></body>
 
 </body>
 </html>
