@@ -8,3 +8,5 @@
   <%= @widget.widget_desc %>
 </p>
 
+<%= link_to 'Edit', edit_widget_path(@widget), :remote => true %> | 
+<%= link_to 'Destroy', @widget, :remote => true, :confirm => 'Are you sure?', :method => :delete %>

@@ -1,28 +1,18 @@
-<h1>Listing widgets</h1>
 
 <table>
   <tr>
     <th>Widget name</th>
     <th>Widget desc</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @widgets.each do |widget| %>
   <tr>
-    <td><%= widget.widget_name %></td>
+    <td><%= link_to widget.widget_name, widget, :remote => true %></td>
     <td><%= widget.widget_desc %></td>
-    <td>
-	     <%# :remote tells Rails to send command to server via Ajax %>
-	     <%= link_to 'Show', widget, :remote => true %>
-	</td>
-    <td><%= link_to 'Edit', edit_widget_path(widget), :remote => true %></td>
-    <td><%= link_to 'Destroy', widget, :remote => true, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Widget', new_widget_path, :remote => true %>
+<%= link_to 'Create a New Widget', new_widget_path, :remote => true %>

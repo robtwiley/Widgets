@@ -47,11 +47,11 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       if @widget.save
         format.html { redirect_to(@widget, :notice => 'Widget was successfully created.') }
-		format.js
+		format.js { redirect_to(root_url, :notice => 'Widget was successfully created.') }
         format.xml  { render :xml => @widget, :status => :created, :location => @widget }
       else
         format.html { render :action => "new" }
-		format.js
+		format.js { redirect_to(root_url) }
         format.xml  { render :xml => @widget.errors, :status => :unprocessable_entity }
       end
     end
