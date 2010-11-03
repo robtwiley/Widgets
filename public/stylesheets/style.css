@@ -63,9 +63,9 @@ img {
    background: #bebebe;
    border:2px solid #969696;
    /* for IE */
-   filter:alpha(opacity=85);
+   /* filter:alpha(opacity=85); */
    /* CSS3 standard */
-   opacity:0.85;
+   /* opacity:0.85; */
 }
 
 #menu-item {
