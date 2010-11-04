@@ -1,0 +1,19 @@
+<% @widgets = Widget.all %>
+
+<table>
+  <tr>
+    <th>Widget name</th>
+    <th>Widget desc</th>
+  </tr>
+
+<% @widgets.each do |widget| %>
+  <tr>
+    <td><%= link_to widget.widget_name, widget, :remote => true %></td>
+    <td><%= widget.widget_desc %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create a New Widget', new_widget_path, :remote => true %>

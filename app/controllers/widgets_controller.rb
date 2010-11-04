@@ -1,13 +1,21 @@
 class WidgetsController < ApplicationController
+  before_filter :load
+
+  def load
+    @widgets = Widget.all
+    @widget = Widget.new
+  end
+
+
   # GET /widgets
   # GET /widgets.xml
   def index
-    @widgets = Widget.all
+    #@widgets = Widget.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @widgets }
-    end
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.xml  { render :xml => @widgets }
+#    end
   end
 
   # GET /widgets/1
