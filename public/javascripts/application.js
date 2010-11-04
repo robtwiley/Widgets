@@ -1,4 +1,10 @@
   <!-- Begin
+  
+    function render_pages (action) {
+       $("#display").html("<%= escape_javascript(render '" + action + "') %>")
+       $("#content").html("<%= escape_javascript(render 'index') %>")
+	}
+    
   	//Used to remove fields from a nested form
 	//See http://media.railscasts.com/videos/197_nested_model_form_part_2.mov
     function remove_fields (link) {

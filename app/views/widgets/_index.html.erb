@@ -1,4 +1,12 @@
+
 <% @widgets = Widget.all %>
+
+<% if notice %>
+  <p id="flash_notice"><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:error] %>
+  <p id="flash_errors"><%= flash[:error] %></p>
+<% end %>
 
 <table>
   <tr>

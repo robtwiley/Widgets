@@ -11,7 +11,9 @@
 
 
 == Yet to do:
+    1) Create unit and functional tests
 
 
 == Questions:
-    1) ... 
+    1) How to handle errors from validation failures.  Ex. no widget name when required should raise error
+	   but how to capture in Javascript/JQuery?

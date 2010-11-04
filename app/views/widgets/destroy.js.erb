@@ -1,2 +1,2 @@
-$("#display").html("<%= escape_javascript(render 'destroy') %>")
+$("#display").html("<%= escape_javascript(render 'destroy', :name => @widget.widget_name ) %>")
 $("#content").html("<%= escape_javascript(render 'index') %>")

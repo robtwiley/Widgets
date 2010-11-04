@@ -4,6 +4,7 @@ class WidgetsController < ApplicationController
   def load
     @widgets = Widget.all
     @widget = Widget.new
+	flash[:notice] = ''
   end
 
 
@@ -55,7 +56,7 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       if @widget.save
         format.html { redirect_to(@widget, :notice => 'Widget was successfully created.') }
-		format.js
+		format.js { flash[:notice] = 'Widget was successfully created.' }
         format.xml  { render :xml => @widget, :status => :created, :location => @widget }
       else
         format.html { render :action => "new" }
@@ -73,7 +74,7 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       if @widget.update_attributes(params[:widget])
         format.html { redirect_to(@widget, :notice => 'Widget was successfully updated.') }
-		format.js
+		format.js { flash[:notice] = 'Widget was successfully updated.' }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -91,7 +92,7 @@ class WidgetsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(widgets_url) }
-	  format.js
+	  format.js { flash[:notice] = 'Widget was successfully destroyed.' }
       format.xml  { head :ok }
     end
   end

@@ -25,6 +25,13 @@ img {
 /* ++++++++ Global general styles end +++++++++++++ */
 
 /* ++++++++ Global structure styles start -- Assign styles to custom tags that impact global envelope of site  +++++++++++++ */
+#flash_notice {
+  color:green;
+}
+
+#flash_error {
+  color:red;
+}
 
 #outer-body {
    text-align:left;
